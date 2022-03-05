@@ -13,6 +13,12 @@ app.get('/',function(req,res) {
 	res.render('pages/homePage');
 });
 
+<<<<<<< HEAD
 app.listen(3000,(req,res) => {
 	console.log('Listening on port 3000');
 });
+=======
+app.listen(3000, function () {
+    console.log("Server listening on port 3000");
+})
+>>>>>>> ad869ca2622fe14af740d243c20cb1d35bc2ed74
