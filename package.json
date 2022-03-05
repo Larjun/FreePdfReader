@@ -1,0 +1,24 @@
+{
+  "name": "freepdfreader",
+  "version": "1.0.0",
+  "description": "An accesible and free pdf to speech service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Larjun/FreePdfReader.git"
+  },
+  "author": "Dylan Kriegman and Arjun Lakshmi Narasimhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Larjun/FreePdfReader/issues"
+  },
+  "homepage": "https://github.com/Larjun/FreePdfReader#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  }
+}
