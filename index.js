@@ -12,5 +12,6 @@ app.get('/',function(req,res) {
 	res.render('pages/homePage');
 });
 
-app.listen(3000);
-console.log('3000 is the magic port');
+app.listen(3000, function () {
+    console.log("Server listening on port 3000");
+})
