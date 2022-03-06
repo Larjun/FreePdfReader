@@ -67,7 +67,7 @@ app.post('/getSpeech',function(req,res) {
 
 app.get('/pdfup',function(req,res) {
 	res.render('pages/textupload', {
-    text: file
+    text: ""
   });
 });
 

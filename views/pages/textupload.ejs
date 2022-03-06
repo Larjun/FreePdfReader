@@ -6,18 +6,20 @@
         <title>PDF Upload</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Semantic-UI/dist/semantic.css" type="text/css">
+        <link rel="stylesheet" href="semantic.css" type="text/css">
         <link rel="stylesheet" href="color.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body class="ui">
         <div class="ui center aligned raised very padded text container segment massive" style="margin-top: 50px; background-color: black;">
             <h1 class="ui grn" style="font-size: 100px;">Please Upload File</h1> <hr>
             <form method="POST" enctype="multipart/form-data" action="/upload ">
                 <div class="btn">
-                    <label class="ui inverted green button massive" style="padding-left: 0.575em; padding-right: 0.575em;"> <input type="file" name="pdfFile" required/ style="display: none;"> Upload File <i class="file icon" style="margin-left:0.2em;"></i> </label> <br>
+                    <label class="ui inverted green button massive" style="padding-left: 0.575em; padding-right: 0.575em;"> <input type="file" name="pdfFile" required/ style="display: none;"> Upload File <i class="fa fa-file" style="margin-left:0.2em;"></i> </label> <br>
                 </div>
                 <div class="btn">
-                    <label class="ui inverted green button massive"><input type="Submit" value="Submit" style="display: none;"> Submit <i class="play icon" style="margin-left:0.25em;"></i></label>
+                    <label class="ui inverted green button massive"><input type="Submit" value="Submit" style="display: none;"> Submit <i class="fa fa-play" style="margin-left:0.25em;"></i></label>
                 </div>
             </form>
             <p style="color: white;"><%= text %></p>
