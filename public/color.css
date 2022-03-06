@@ -1,0 +1,21 @@
+.grn {
+    color: #39FF14;
+}
+
+.ylw {
+    color: #FFF01F;
+}
+
+hr {
+    border-color: #39FF14;
+    background-color: #39FF14;
+}
+
+body {
+    background-color: black;
+}
+
+.btn {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
