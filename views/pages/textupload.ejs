@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PDF Upload</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Semantic-UI/dist/semantic.css" type="text/css">
+        <link rel="stylesheet" href="color.css" type="text/css">
+    </head>
+    <body class="ui">
+        <div class="ui center aligned raised very padded text container segment massive" style="margin-top: 50px; background-color: black;">
+            <h1 class="ui grn" style="font-size: 100px;">Please Upload File</h1> <hr>
+            <form method="POST" enctype="multipart/form-data" action="/upload ">
+                <div class="btn">
+                    <label class="ui inverted green button massive" style="padding-left: 0.575em; padding-right: 0.575em;"> <input type="file" name="pdfFile" required/ style="display: none;"> Upload File <i class="file icon" style="margin-left:0.2em;"></i> </label> <br>
+                </div>
+                <div class="btn">
+                    <label class="ui inverted green button massive"><input type="Submit" value="Submit" style="display: none;"> Submit <i class="play icon" style="margin-left:0.25em;"></i></label>
+                </div>
+            </form>
+            <p style="color: white;"><%= text %></p>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
