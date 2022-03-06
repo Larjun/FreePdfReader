@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Free PDF Reader</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="semantic.css" type="text/css">
+    <link rel="stylesheet" href="color.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="ui">
+    <div class="ui center aligned raised very padded text container segment massive"
+        style="margin-top: 50px; background-color: black;">
+        <h1 class="ui grn" style="font-size: 100px;">Please Upload File</h1>
+        <hr>
+        <form method="POST" enctype="multipart/form-data" action="/uploaded">
+            <div class="btn">
+                <label class="ui inverted green button massive" style="padding-left: 0.575em; padding-right: 0.575em;">
+                    <input type="file" name="pdfFile" required/ style="display: none;"> Upload File <i
+                        class="fa fa-file" style="margin-left:0.2em;"></i> </label> <br>
+            </div>
+            <div class="btn">
+                <label class="ui inverted green button massive"><input type="Submit" value="Submit"
+                        style="display: none;"> Submit <i class="fa fa-play" style="margin-left:0.25em;"></i></label>
+            </div>
+        </form>
+        <!-- If the text has been parsed -->
+        <% if (pdfUploaded) { %>
+        <!--<script>-->
+        <audio id="player">
+            <source src="audio/save.mp3" type="audio/mpeg">
+            <p>Your browser doesn't support HTML5 audio. Here is
+                a <a href="myAudio.mp3">link to the audio</a> instead.</p>
+        </audio>
+        <div>
+            <button class="ui pink button huge" onclick="document.getElementById('player').play(); isPlaying = true" style="margin-top: 1rem; margin-bottom: 1rem;"><i class="fa fa-play"></i></button>
+            <button class="ui pink button huge" onclick="document.getElementById('player').pause(); isPlaying = false" style="margin-top: 1rem; margin-bottom: 1rem;"><i class="fa fa-pause"></i></button>
+            <button class="ui pink button huge" onclick="document.getElementById('player').pause(); document.getElementById('player').currentTime = 0; isPlaying = false" style="margin-top: 1rem; margin-bottom: 1rem;"><i class="fa fa-stop"></i></button>
+            <button class="ui pink button huge " onclick="document.getElementById('player').volume += 0.1" style="margin-top: 1rem; margin-bottom: 1rem;">Vol +</button>
+            <button class="ui pink button huge" onclick="document.getElementById('player').volume -= 0.1" style="margin-top: 1rem; margin-bottom: 1rem;">Vol -</button>
+            <progress id="seekbar" value="0" max="1" ;"></progress>
+        </div>
+        <!--</script>-->
+        <% } %>
+
+        <!-- Conditionally display the butttons based on whether the text has been parsed-->
+    </div>
+
+    <script src="" async defer></script>
+    <script>
+        $('#player').on('timeupdate', function () {
+            $('#seekbar').attr("value", this.currentTime / this.duration);
+        });
+        var isPlaying = false;
+
+        document.body.onkeydown = function (e) {
+            p = document.getElementById('player')
+            if (e.keyCode == 32) {
+                if (isPlaying) {
+                    isPlaying = false
+                    p.pause()
+                } else {
+                    isPlaying = true
+                    p.play()
+                }
+            }
+            if (e.keyCode == 38) {
+                p.volume += 0.1
+            }
+            if (e.keyCode == 40) {
+                p.volume -= 0.1
+            }
+            if (e.keyCode == 39) {
+                p.currentTime += 2
+            }
+            if (e.keyCode == 37) {
+                p.currentTime -= 2
+            }
+        }
+    </script>
+</body>
+
+</html>

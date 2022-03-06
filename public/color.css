@@ -19,3 +19,35 @@ body {
     margin-top: 35px;
     margin-bottom: 35px;
 }
+
+#seekbar {
+    width: 100%;
+    background-color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.medBtn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+progress::-moz-progress-bar {
+    background-color: #50ffff;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #1d1d1d;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #50ffff;
+    border-radius: 10px;
+}
+
+progress {
+    color: #50ffff;
+    border-radius: 10px;
+}
