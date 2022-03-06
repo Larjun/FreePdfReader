@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
+const port = process.env || 5000
+
 var file = "";
 
 var storage = multer.diskStorage({
