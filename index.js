@@ -101,6 +101,8 @@ app.post('upload/getSpeech',function(req,res) {
 	
 });
 
-app.listen(3000, function () {
-    console.log("Server listening on port 3000");
-})
+const PORT = process.env.PORT || 8080;
+
+const server = app.listen(PORT, () => {
+	console.log(`Express running → PORT ${server.address().port}`);
+});
