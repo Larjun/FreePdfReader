@@ -1539,13 +1539,13 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.big.buttons .button,
 .ui.big.buttons .or,
 .ui.big.button {
-  font-size: 1.28571429rem;
+  font-size: 2rem;
 }
 
 .ui.huge.buttons .button,
 .ui.huge.buttons .or,
 .ui.huge.button {
-  font-size: 1.42857143rem;
+  font-size: 2.5rem;
 }
 
 .ui.massive.buttons .button,
@@ -3250,8 +3250,8 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.pink.buttons .button,
 .ui.pink.button {
-  background-color: #E03997;
-  color: #FFFFFF;
+  background-color: #ff5cff;
+  color: #000000;
   text-shadow: none;
   background-image: none;
 }
@@ -3263,22 +3263,22 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.pink.buttons .button:hover,
 .ui.pink.button:hover {
-  background-color: #e61a8d;
-  color: #FFFFFF;
+  background-color: #fa83fa;
+  color: #000000;
   text-shadow: none;
 }
 
 .ui.pink.buttons .button:focus,
 .ui.pink.button:focus {
-  background-color: #e10f85;
-  color: #FFFFFF;
+  background-color: #ff0090;
+  color: #000000;
   text-shadow: none;
 }
 
 .ui.pink.buttons .button:active,
 .ui.pink.button:active {
-  background-color: #c71f7e;
-  color: #FFFFFF;
+  background-color: #ff0090;
+  color: #000000;
   text-shadow: none;
 }
 
@@ -3342,7 +3342,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   background-color: transparent;
   -webkit-box-shadow: 0px 0px 0px 2px #FF8EDF inset !important;
   box-shadow: 0px 0px 0px 2px #FF8EDF inset !important;
-  color: #FF8EDF;
+  color: #ff5cff;
 }
 
 .ui.inverted.pink.buttons .button:hover,
@@ -3355,27 +3355,27 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.inverted.pink.button:active {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .ui.inverted.pink.buttons .button:hover,
 .ui.inverted.pink.button:hover {
-  background-color: #ff74d8;
+  background-color: #ff5cff;
 }
 
 .ui.inverted.pink.buttons .button:focus,
 .ui.inverted.pink.button:focus {
-  background-color: #ff65d3;
+  background-color: #ff5cff;
 }
 
 .ui.inverted.pink.buttons .active.button,
 .ui.inverted.pink.active.button {
-  background-color: #ff74d8;
+  background-color: #ff5cff;
 }
 
 .ui.inverted.pink.buttons .button:active,
 .ui.inverted.pink.button:active {
-  background-color: #ff5bd1;
+  background-color: #ff5cff;
 }
 
 /* Inverted Basic */
@@ -3386,7 +3386,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   background-color: transparent;
   -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
-  color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
 .ui.inverted.pink.basic.buttons .button:hover,
@@ -3394,7 +3394,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.inverted.pink.basic.button:hover {
   -webkit-box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
   box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
-  color: #FF8EDF !important;
+  color: #ff5cff !important;
 }
 
 .ui.inverted.pink.basic.buttons .button:focus,
@@ -3402,7 +3402,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.inverted.pink.basic.button:focus {
   -webkit-box-shadow: 0px 0px 0px 2px #ff65d3 inset !important;
   box-shadow: 0px 0px 0px 2px #ff65d3 inset !important;
-  color: #FF8EDF !important;
+  color: #ff5cff !important;
 }
 
 .ui.inverted.pink.basic.buttons .active.button,
@@ -3410,7 +3410,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.inverted.pink.basic.active.button {
   -webkit-box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
   box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
-  color: #FF8EDF !important;
+  color: #ff5cff !important;
 }
 
 .ui.inverted.pink.basic.buttons .button:active,
@@ -3418,7 +3418,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.inverted.pink.basic.button:active {
   -webkit-box-shadow: 0px 0px 0px 2px #ff5bd1 inset !important;
   box-shadow: 0px 0px 0px 2px #ff5bd1 inset !important;
-  color: #FF8EDF !important;
+  color: #ff5cff !important;
 }
 
 /*--- Violet ---*/

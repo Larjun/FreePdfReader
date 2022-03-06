@@ -36,59 +36,70 @@ const pdfUpload = multer({
   }
 })
 
-
 app.get('/',function(req,res) {
-	res.render('pages/homePage');
+	res.render('pages/index', {
+    	text: "",
+		  pdfUploaded: false
+  	});
 });
 
-app.post('/getSpeech',function(req,res) {
-	console.log('Generating speech audio')
-	var speechText = req.text
-	var text = "Why is six afraid of seven? Six hasn't been the same since he left Vietnam. He can seldom close his eyes without opening them again at fear of Charlies lurking in the jungle trees. Not that you could ever see the bastards, mind you. They were swift, and they knew their way around the jungle like nothing else. He remembers the looks on the boys' faces as he walked into that village and... oh, Jesus. The memories seldom left him, either. Sometimes he'd reminisce - even hear - Tex's southern drawl. He remembers the smell of Brooklyn's cigarettes like nothing else. He always kept a pack of Lucky's with him. The boys are gone, now. He knows that; it's just that he forgets, sometimes. And, every now and then, the way that seven looks at him with avid concern in his eyes... it makes him think. Sets him on edge. Makes him feel like he's back there... in the jungle."
-	speechText = text
-	var gtts = new gTTS(text, 'en');
-	speechPath = __dirname + '/tmp/speech.mp3'
-	gtts.stream().pipe(res);
-	/*
-	gtts.save(speechPath,(err,res) => {
-		if (err) { 
-			console.log('Error writing audio to file')
-			res.send({generatedText:false})
-			//throw new Error(err)	
-		}
-		else {
-			console.log('Wrote audio to file')
-			res.send({generatedText:true});
-		}
-	})
-	*/
-	
-});
-
-app.get('/pdfup',function(req,res) {
-	res.render('pages/textupload', {
-    text: ""
-  });
-});
-
-/*app.get('/pdfup/uploaded',function(req,res) {
-	res.render('pages/textupload', {
-    text: file
-  });
-}); */
-
-app.post('/upload', pdfUpload.single("pdfFile"), (req, res) => {
+app.post('/uploaded', pdfUpload.single("pdfFile"), (req, res) => {
     let dataBuffer = fs.readFileSync(req.file.path)
-    console.log(req.file)
+    //console.log(req.file)
     pdf(dataBuffer).then(function(data) {
-        console.log(data)
-        res.render('pages/textupload', {
-          text: data.text
-        });
+        //console.log(data)
+        console.log('Generating speech audio')
+        var speechText = data.text
+        var gtts = new gTTS(speechText, 'en');
+        pdf_uploaded = false;
+        // send path to mp3 in result
+        speechPath = './public/audio/save.mp3' // change this
+        gtts.save(speechPath,(err) => {
+          if (err) { 
+            console.log('Error writing audio to file')
+            pdfUploaded = false;
+            //res.send({generatedText:false, speechPath:speechPath})
+            //throw new Error(err)	
+            res.render('pages/index', {
+              text: data.text,
+              pdfUploaded: false,
+              //generatedText:true,
+              //speechPath:speechPath
+            });
+          }
+          else {
+            console.log('Wrote audio to file')
+            //res.send({generatedText:true, speechPath:speechPath});
+            pdf_uploaded = true;
+            res.render('pages/index', {
+              text: data.text,
+              pdfUploaded: true,
+            });
+          }
+        })
     });
 }, (error, req, res, next) => {
     res.status(400).send({ error: error.message })
 })
+
+app.post('upload/getSpeech',function(req,res) {
+	console.log('Generating speech audio')
+	var speechText = req.text
+	var gtts = new gTTS(speechText, 'en');
+	// send path to mp3 in result
+	speechPath = __dirname + '/tmp/speech.mp3' // change this
+	gtts.save(speechPath,(err,res) => {
+		if (err) { 
+			console.log('Error writing audio to file')
+			res.send({generatedText:false, speechPath:speechPath})
+		}
+		else {
+			console.log('Wrote audio to file')
+			res.send({generatedText:true, speechPath:speechPath});
+		}
+	})
+	
+});
 
 app.listen(3000, function () {
     console.log("Server listening on port 3000");
